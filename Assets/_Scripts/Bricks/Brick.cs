@@ -48,7 +48,7 @@ public class Brick : MonoBehaviour
             spriteRenderer.sprite = states[health - 1];
         }
 
-        GameManager.Instance.OnBrickHit(this);
+        //GameManager.Instance.OnBrickHit(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

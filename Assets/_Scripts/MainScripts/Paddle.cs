@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-
     public new Rigidbody2D rigidbody;
     public float speed ;
     public float RightScreenEdge;
     public float LeftScreenEdge;
-
+    public GameManager gm;
 
     private void Awake()
     {
@@ -24,6 +23,9 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gm.gameOver){
+            return;
+        }
         float horizontal =Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right*horizontal*Time.deltaTime*speed);
         if(transform.position.x<LeftScreenEdge){
