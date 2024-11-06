@@ -42,6 +42,7 @@ public class Ball : MonoBehaviour
             Transform newEffect = Instantiate(effect, other.transform.position, other.transform.rotation);
             Destroy(newEffect.gameObject,2f);
             gm.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
+            gm.UpdateNumberOfBricks();
             Destroy(other.gameObject);
         }
     }
